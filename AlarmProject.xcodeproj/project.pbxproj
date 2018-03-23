@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B34FA10220534838005D70E1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34FA10120534838005D70E1 /* AudioToolbox.framework */; };
 		B39BF5B1205322FF00B6E753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BF5B0205322FF00B6E753 /* AppDelegate.swift */; };
 		B39BF5B3205322FF00B6E753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BF5B2205322FF00B6E753 /* ViewController.swift */; };
 		B39BF5B6205322FF00B6E753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39BF5B4205322FF00B6E753 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B34FA0FF20534838005D70E1 /* AlarmProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlarmProject.entitlements; sourceTree = "<group>"; };
+		B34FA10120534838005D70E1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B39BF5AD205322FF00B6E753 /* AlarmProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39BF5B0205322FF00B6E753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B39BF5B2205322FF00B6E753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +34,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34FA10220534838005D70E1 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B34FA10020534838005D70E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B34FA10120534838005D70E1 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B39BF5A4205322FF00B6E753 = {
 			isa = PBXGroup;
 			children = (
 				B39BF5AF205322FF00B6E753 /* AlarmProject */,
 				B39BF5AE205322FF00B6E753 /* Products */,
+				B34FA10020534838005D70E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +69,7 @@
 		B39BF5AF205322FF00B6E753 /* AlarmProject */ = {
 			isa = PBXGroup;
 			children = (
+				B34FA0FF20534838005D70E1 /* AlarmProject.entitlements */,
 				B39BF5B0205322FF00B6E753 /* AppDelegate.swift */,
 				B39BF5B2205322FF00B6E753 /* ViewController.swift */,
 				B39BF5B4205322FF00B6E753 /* Main.storyboard */,
@@ -100,6 +114,14 @@
 					B39BF5AC205322FF00B6E753 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -278,9 +300,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlarmProject/AlarmProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7U862FSW6;
 				INFOPLIST_FILE = AlarmProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.AlarmProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,9 +317,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlarmProject/AlarmProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7U862FSW6;
 				INFOPLIST_FILE = AlarmProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.AlarmProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

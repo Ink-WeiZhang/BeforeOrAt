@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBAction func NotificationTest(_ sender: Any) {
         let targetDate = AlarmPicker.date
         let time = getTimeUntilAlarmInSeconds(dateEnd: targetDate)!
+        
         if time > 0.0 {
             timedNotification(inSeconds: time) { (success) in
                 if success {
@@ -42,8 +43,11 @@ class ViewController: UIViewController {
     }
     
     func getTimeUntilAlarmInSeconds(dateEnd: Date) -> (Double?) {
+        
         var totalSeconds = 0
         let dateStart = Date()
+        print("Curren Date " + dateStart.description)
+        print("Target Date " + dateEnd.description)
         let componentsLeftTime = Calendar.current.dateComponents([.minute , .hour , .day,.month, .weekOfMonth,.year], from: dateStart, to: dateEnd)
         let years = componentsLeftTime.year ?? 0
         let months = componentsLeftTime.month ?? 0
